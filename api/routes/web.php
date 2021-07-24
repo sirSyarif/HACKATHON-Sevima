@@ -14,5 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/auth/login');
 });
+
+Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/* ROUTE EDIT DELETE CRUD */
+Route::get('admin/home/tambah', 'HomeController@tambah');
+Route::post('admin/home/store', 'HomeController@store');
+Route::get('admin/home/edit/{id}', 'HomeController@edit');
+Route::put('admin/home/update/{id}', 'HomeController@update');
+Route::get('admin/home/hapus/{id}', 'HomeController@delete');
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

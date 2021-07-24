@@ -49,11 +49,12 @@ class VaksinController extends Controller
     public function store(Request $request)
     {
 
-        $data = $request->only('jenis', 'dosis', 'tempat');
+        $data = $request->only('jenis', 'dosis', 'tempat', 'tanggal');
         $validator = Validator::make($data, [
             'jenis' => 'required|string',
             'dosis' => 'required',
-            'tempat' => 'required'
+            'tempat' => 'required',
+            'tanggal' => 'required'
         ]);
 
 
@@ -64,7 +65,8 @@ class VaksinController extends Controller
         $vaksin = $this->user->vaksin()->create([
             'jenis' => $request->jenis,
             'dosis' => $request->dosis,
-            'tempat' => $request->tempat
+            'tempat' => $request->tempat,
+            'tanggal' => $request->tanggal
         ]);
 
         return response()->json([
@@ -87,7 +89,7 @@ class VaksinController extends Controller
         if (!$vaksin) {
             return response()->json([
                 'success' => false,
-                'message' => 'Sorry, product not found.'
+                'message' => 'Sorry, Vaksinasi not found.'
             ], 400);
         }
     
@@ -97,7 +99,7 @@ class VaksinController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Vaksin
      * @return \Illuminate\Http\Response
      */
     public function edit(Vaksin $vaksin)
@@ -115,11 +117,11 @@ class VaksinController extends Controller
     public function update(Request $request, Vaksin $vaksin)
     {
         //Validate data
-        $data = $request->only('jenis', 'dosis', 'tempat');
+        $data = $request->only('jenis', 'tempat','tanggal');
         $validator = Validator::make($data, [
             'jenis' => 'required|string',
-            'dosis' => 'required',
             'tempat' => 'required',
+            'tanggal' => 'required'
         ]);
 
         //Send failed response if request is not valid
@@ -129,13 +131,13 @@ class VaksinController extends Controller
 
         $vaksin = $vaksin->update([
             'jenis' => $request->jenis,
-            'dosis' => $request->dosis,
-            'tempat' => $request->tempat
+            'tempat' => $request->tempat,
+            'tanggal' => $request->tanggal
         ]);
 
         return response()->json([
             'success' => true,
-            'message' => 'Product updated successfully',
+            'message' => 'Vaksinasi updated successfully',
             'data' => $vaksin
         ], Response::HTTP_OK);
     }
@@ -143,7 +145,7 @@ class VaksinController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Vaksin  
      * @return \Illuminate\Http\Response
      */
     public function destroy(Vaksin $vaksin)
