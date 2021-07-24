@@ -60,8 +60,6 @@
 
         <!-- CONTENT -->
         <div id="main">
-            <img src="{{ asset('img/covid.png') }}" alt="">
-
             <div>
                 <center><p class="judul">What is Covid 19?</p></center>
                 <p class="isi">
