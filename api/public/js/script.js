@@ -26,6 +26,7 @@ function scrollFunction() {
 // INI API NYA
         getData();
         getDataGlobal();
+        getVaksin();
         
         async function getData() {
             const response = await fetch("https://covid19.mathdro.id/api/countries/Indonesia");
@@ -46,3 +47,14 @@ function scrollFunction() {
             document.getElementById("sembuhGlobal").innerHTML = recovered.value;
             document.getElementById("meninggalGlobal").innerHTML = deaths.value;
         }
+
+        async function getVaksin() {
+          const response = await fetch("http://vaksincovid19-api.vercel.app/api/vaksin");
+          const data = await response.json();
+          const { vaksinasi1, vaksinasi2} = data;
+          
+          document.getElementById("sasaran").innerHTML = vaksinasi1;
+          document.getElementById("medis").innerHTML = vaksinasi2;
+      }
+
+        

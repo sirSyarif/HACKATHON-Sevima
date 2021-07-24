@@ -9,7 +9,9 @@
 
 
 */
-
+body, body * {
+  font-family: Helvetica, sans-serif;
+}
 
 
 
@@ -327,8 +329,9 @@ h1, h2, h3, h4, h5, h6 {
 /* HOME */
 .judul{
   margin-top: 20px;
-  font-weight: 900;
+  font-weight: 900 !important;
   font-size: 40px;
+  margin-bottom: 20px;
 }
 
 .isi{
@@ -360,6 +363,25 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 3px 3px 3px 3px #888888;
 }
 
+.merah{
+  box-shadow: -5px -3px 22px -6px rgba(255,0,0,0.75);
+  -webkit-box-shadow: -5px -3px 22px -6px rgba(255,0,0,0.75);
+  -moz-box-shadow: -5px -3px 22px -6px rgba(255,0,0,0.75);
+}
 
+.kuning {
+  box-shadow: -5px -3px 22px -6px rgba(255,232,0,0.75);
+  -webkit-box-shadow: -5px -3px 22px -6px rgba(255,232,0,0.75);
+  -moz-box-shadow: -5px -3px 22px -6px rgba(255,232,0,0.75);
+}
 
+.hijau {
+  box-shadow: -5px -3px 22px -6px rgba(48,255,0,0.75);
+  -webkit-box-shadow: -5px -3px 22px -6px rgba(48,255,0,0.75);
+  -moz-box-shadow: -5px -3px 22px -6px rgba(48,255,0,0.75);
+}
+
+.text {
+  margin-bottom: 50px;
+}
 

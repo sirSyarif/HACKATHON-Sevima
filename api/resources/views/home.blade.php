@@ -27,8 +27,6 @@
             <div id="navbar" class="nav navbar-nav">
                 <div>
                     <a href="#default" id="logo" class="float-left">iCOVID</a>
-                    <a class="float-left tengah" href="/home">Home</a>
-                    <a class="float-left" href="#kontak">Contact</a>    
                     @guest            
                     @if (Route::has('login'))
                         
@@ -61,34 +59,24 @@
         <!-- CONTENT -->
         <div id="main">
             <div>
-                <center><p class="judul">What is Covid 19?</p></center>
-                <p class="isi">
-                Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
-
-                Most people infected with the COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment.  Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness.
-                    
-                The best way to prevent and slow down transmission is be well informed about the COVID-19 virus, the disease it causes and how it spreads. Protect yourself and others from infection by washing your hands or using an alcohol based rub frequently and not touching your face. 
-                    
-                The COVID-19 virus spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes, so it’s important that you also practice respiratory etiquette (for example, by coughing into a flexed elbow).
-                </p>
-            </div>
-            <div>
-                <center><p class="judul" style="margin-top: 50px;"><span>CORONAVIRUS GLOBAL DISEASE</span></p></center>
+                <center><p class="judul" style="margin-top: 50px;"><span>CORONAVIRUS GLOBAL DISEASE</span></p>
+                <h6 class="text">Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.</h6>
+            </center>
                 <div class="row justify-content-center">
                    
-                    <div class="card bg-warning jarak col-sm-3">
+                    <div class="card jarak col-sm-3 kuning">
                         <div class="card-body text-center">
                           <p>Total Confirmed</p>
                           <p id="positifGlobal"></p>
                         </div>
                     </div>
-                    <div class="card bg-success jarak col-sm-3">
+                    <div class="card jarak col-sm-3 hijau ">
                         <div class="card-body text-center">
                           <p>Total Recovered</p>
                           <p id="sembuhGlobal"></p>
                         </div>
                     </div>
-                    <div class="card bg-danger jarak col-sm-3">
+                    <div class="card jarak col-sm-3 merah">
                         <div class="card-body text-center">
                           <p>Total Deaths</p>
                           <p id="meninggalGlobal"></p>
@@ -130,6 +118,24 @@
                   CONFIRMED : <p id="positif"></p> COVERED : <p id="sembuh"></p> DEATHS : <p id="meninggal"></p>
                   </div>
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <center><p class="judul" style="margin-top: 50px;"><span>VACCINATED DATA</span></p><center>
+            <div class="container-fluid row justify-content-center">
+            <div class="card jarak col-sm-5 hijau">
+                        <div class="card-body text-center">
+                          <p>Total Vaksinasi Dosis 1</p>
+                          <p id="sasaran"></p>
+                        </div>
+                    </div>
+                    <div class="card jarak col-sm-5 hijau">
+                        <div class="card-body text-center">
+                          <p>Total Vaksinasi Dosis 2</p>
+                          <p id="medis"></p>
+                        </div>
+                    </div>
             </div>
         </div>
 

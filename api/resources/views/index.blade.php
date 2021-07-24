@@ -115,7 +115,7 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-sm-7">
-                                <p class="mb-0 f_400">© SMKN 4 BDG 2020 All rights reserved.</p>
+                                <p class="mb-0 f_400">© siSyarif 2021 All rights reserved.</p>
                             </div>
                             <div class="col-lg-6 col-sm-5 text-right">
                                 <p>Made with <i class="fa fa-heart"></i> in <a href="#">Bandung</a></p>
